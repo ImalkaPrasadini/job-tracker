@@ -1,0 +1,54 @@
+1. three tables Companies, Jobs, interviews
+2.Relationships and PK and FK
+3.Insert some data and check bellow queries
+4.Having vs Group by
+
+
+INSERT INTO Companies(CompanyName, Industry, Location)
+values('ABC', 'IT', 'Colombo')
+
+INSERT INTO Companies(CompanyName, Industry, Location)
+values('xyz', 'IT', 'Colombo')
+
+select * from Companies
+
+insert into Jobs(ComanyId, Role, Status, AppliedDate, Notes)
+values(1, 'SE', 'Pening', '2026-01-10', 'Junior position')
+
+select * from Jobs
+
+select * 
+from Companies com
+inner join Jobs jo on jo.ComanyId = com.ID
+
+
+select * 
+from Companies com
+left join Jobs jo on jo.ComanyId = com.ID
+
+select * 
+from Companies com
+right join Jobs jo on jo.ComanyId = com.ID
+
+select * 
+from Companies com
+left outer join Jobs jo on jo.ComanyId = com.ID
+
+select * 
+from Companies com
+left join Jobs jo on jo.ComanyId = com.ID
+where com.CompanyName = 'XYZ'
+
+
+select * 
+from Companies com
+left join Jobs jo on jo.ComanyId = com.ID
+where com.CompanyName = 'xyz'
+
+select com.ID 
+from Companies com
+left join Jobs jo on jo.ComanyId = com.ID
+group by com.ID,CompanyName
+having com.CompanyName = 'xyz'
+
+
