@@ -1,54 +1,98 @@
-1. three tables Companies, Jobs, interviews
+1. four tables Companies, Jobs, interviews
 2.Relationships and PK and FK
 3.Insert some data and check bellow queries
 4.Having vs Group by
 
 
-INSERT INTO Companies(CompanyName, Industry, Location)
-values('ABC', 'IT', 'Colombo')
+INSERT INTO Companies([Name],[Industry],[Location],[WebSite],[CreatedDate])
+values('ABC', 'IT', 'Colombo', 'aaaa', '2026-03-05')
 
-INSERT INTO Companies(CompanyName, Industry, Location)
-values('xyz', 'IT', 'Colombo')
+INSERT INTO Companies([Name],[Industry],[Location],[WebSite],[CreatedDate])
+values('xyz', 'IT', 'Colombo', 'ss', '2026-03-05')
 
 select * from Companies
 
-insert into Jobs(ComanyId, Role, Status, AppliedDate, Notes)
-values(1, 'SE', 'Pening', '2026-01-10', 'Junior position')
+
+insert into Status(Name)
+values('New');
+insert into Status(Name)
+values('Pending');
+insert into Status(Name)
+values('In-Prograss');
+insert into Status(Name)
+values('Terminated');
+
+insert into Jobs([CompanyId],[StatusId],[Title],[JobType],[SalaryRange],[AppliedDate],[Notes])
+values(1, 1, 'SE', 'Full-Time', '150K', '2026-03-05', 'None');
+
+insert into Jobs([CompanyId],[StatusId],[Title],[JobType],[SalaryRange],[AppliedDate],[Notes])
+values(1, 3, 'DE', 'Part-Time', '10K', '2026-03-05', '');
+
+insert into Jobs([CompanyId],[StatusId],[Title],[JobType],[SalaryRange],[AppliedDate],[Notes])
+values(1, 1, 'SE', 'Full-Time', '250K', '2026-03-05', 'None');
 
 select * from Jobs
 
-select * 
-from Companies com
-inner join Jobs jo on jo.ComanyId = com.ID
+insert into Interviews([JobId],[InterviewType],[InterviewDate],[Result])
+values(1,'On-site','2026-03-05','Pending');
 
+insert into Interviews([JobId],[InterviewType],[InterviewDate],[Result])
+values(3,'Online','2026-03-05','None');
 
-select * 
-from Companies com
-left join Jobs jo on jo.ComanyId = com.ID
+select * from
+[dbo].[Companies] com 
+inner join [dbo].[Jobs] job on job.CompanyId = com.ID
+inner join [dbo].[Status] sta on sta.ID = job.StatusId
+inner join [dbo].[Interviews] int on int.JobId = job.ID
 
-select * 
-from Companies com
-right join Jobs jo on jo.ComanyId = com.ID
-
-select * 
-from Companies com
-left outer join Jobs jo on jo.ComanyId = com.ID
-
-select * 
-from Companies com
-left join Jobs jo on jo.ComanyId = com.ID
-where com.CompanyName = 'XYZ'
-
+select * from
+[dbo].[Companies] com 
+left join [dbo].[Jobs] job on job.CompanyId = com.ID
+left join [dbo].[Status] sta on sta.ID = job.StatusId
+left join [dbo].[Interviews] int on int.JobId = job.ID
 
 select * 
 from Companies com
-left join Jobs jo on jo.ComanyId = com.ID
-where com.CompanyName = 'xyz'
+inner join Jobs jo on jo.CompanyId = com.ID
+
+
+select * 
+from Companies com
+left join Jobs jo on jo.CompanyId = com.ID
+
+select * 
+from Companies com
+right join Jobs jo on jo.CompanyId = com.ID
+
+select * 
+from Companies com
+left outer join Jobs jo on jo.CompanyId = com.ID
+
+select * 
+from Companies com
+left join Jobs jo on jo.CompanyId = com.ID
+where com.Name = 'XYZ'
+
+
+select * 
+from Companies com
+left join Jobs jo on jo.CompanyId = com.ID
+where com.Name = 'xyz'
 
 select com.ID 
 from Companies com
-left join Jobs jo on jo.ComanyId = com.ID
-group by com.ID,CompanyName
-having com.CompanyName = 'xyz'
+left join Jobs jo on jo.CompanyId = com.ID
+group by com.ID,Name
+having com.Name = 'xyz'
+
+
+
+select * from
+[dbo].[Companies] com 
+inner join [dbo].[Jobs] job on job.CompanyId = com.ID
+inner join [dbo].[Status] sta on sta.ID = job.StatusId
+inner join [dbo].[Interviews] int on int.JobId = job.ID
+where sta.Name = 'Pending'
+
 
 
