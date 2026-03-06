@@ -39,11 +39,12 @@ values(1,'On-site','2026-03-05','Pending');
 insert into Interviews([JobId],[InterviewType],[InterviewDate],[Result])
 values(3,'Online','2026-03-05','None');
 
+
 select * from
 [dbo].[Companies] com 
 inner join [dbo].[Jobs] job on job.CompanyId = com.ID
 inner join [dbo].[Status] sta on sta.ID = job.StatusId
-inner join [dbo].[Interviews] int on int.JobId = job.ID
+inner join [dbo].[Interviews] int on int.JobId = job.ID;
 
 select * from
 [dbo].[Companies] com 
@@ -51,18 +52,17 @@ left join [dbo].[Jobs] job on job.CompanyId = com.ID
 left join [dbo].[Status] sta on sta.ID = job.StatusId
 left join [dbo].[Interviews] int on int.JobId = job.ID
 
+
+select * from Companies;
+select * from Jobs;
+
 select * 
 from Companies com
 inner join Jobs jo on jo.CompanyId = com.ID
 
-
 select * 
 from Companies com
-left join Jobs jo on jo.CompanyId = com.ID
-
-select * 
-from Companies com
-right join Jobs jo on jo.CompanyId = com.ID
+left join Jobs jo on jo.CompanyId = com.ID;
 
 select * 
 from Companies com
@@ -70,9 +70,20 @@ left outer join Jobs jo on jo.CompanyId = com.ID
 
 select * 
 from Companies com
+right join Jobs jo on jo.CompanyId = com.ID;
+
+select * 
+from Companies com
+right outer join Jobs jo on jo.CompanyId = com.ID
+
+select * 
+from Companies com
+full join Jobs jo on jo.CompanyId = com.ID
+
+select * 
+from Companies com
 left join Jobs jo on jo.CompanyId = com.ID
 where com.Name = 'XYZ'
-
 
 select * 
 from Companies com
@@ -85,14 +96,9 @@ left join Jobs jo on jo.CompanyId = com.ID
 group by com.ID,Name
 having com.Name = 'xyz'
 
-
-
 select * from
 [dbo].[Companies] com 
 inner join [dbo].[Jobs] job on job.CompanyId = com.ID
 inner join [dbo].[Status] sta on sta.ID = job.StatusId
 inner join [dbo].[Interviews] int on int.JobId = job.ID
 where sta.Name = 'Pending'
-
-
-
