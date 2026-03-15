@@ -1,4 +1,4 @@
-🚀 Job Application Tracker — Full Stack Application
+🚀 **Job Application Tracker — Full Stack Application**
 
 This project is a full-stack web application designed to manage and track job applications, companies, and interview progress.
 
