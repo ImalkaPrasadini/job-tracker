@@ -1,26 +1,52 @@
-**Job Application Tracker - Full Stack Web Application**
+🚀 Job Application Tracker — Full Stack Application
 
-**Description**
-Job Application Tracker is a full-stack web application designed to help users organize and manage job applications efficiently.
-The application allows users to store company details, track job positions, and monitor interview progress in a structured way.
-This project demonstrates the development of a modern full-stack architecture by combining a relational database, RESTful backend services, and a responsive frontend interface.
-It focuses on clean database design, API-driven development, and scalable application structure.
+This project is a full-stack web application designed to manage and track job applications, companies, and interview progress.
 
-**Tech Stack**
-Frontend
-- Angular
-Backend
-- .NET Web API
-Database
-- SQL Server
-Tools
-- Git
-- GitHub
+It demonstrates the development of a modern full-stack system, including database design, RESTful API development, and frontend-backend integration.
 
-**Skills Demonstrated**
-- Full Stack Development
-- REST API Development
-- Relational Database Design
-- CRUD Operations
-- SQL Query Development
-- Backend Service Architecture
+The application is built using Angular for the frontend, .NET Web API for backend services, and Microsoft SQL Server for database management.
+
+🛠️ Technologies/backend
+
+**Backend**
+.NET Web API
+Entity Framework Core
+
+**Frontend**
+Angular
+
+**Database**
+SQL Server
+
+**Tools**
+Git
+GitHub
+SQL Server Management Studio
+
+🔧 Features- Full Stack Development
+
+Manage companies and job applications
+Track application status (Applied, Interview, Offer, Rejected)
+RESTful API endpoints for CRUD operations
+Relational database design with foreign keys
+Backend service architecture for scalability
+
+🗄️ Database
+
+**Main Tables**
+Companies
+Jobs
+Status
+Interviews
+
+📚 Skills Demonstrated
+
+Full Stack Development
+REST API Development
+SQL Database Design
+CRUD Operations
+Backend Architecture
+Frontend–Backend Integration
+
+📜 Notes
+This project is a personal learning project focused on strengthening full-stack development skills and building practical experience with modern web technologies.
