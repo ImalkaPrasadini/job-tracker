@@ -49,4 +49,5 @@ Backend Architecture
 Frontend–Backend Integration
 
 📜 Notes
+
 This project is a personal learning project focused on strengthening full-stack development skills and building practical experience with modern web technologies.
